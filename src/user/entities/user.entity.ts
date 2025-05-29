@@ -31,9 +31,9 @@ export class UserEntity {
   @Exclude()
   passwordChangedAt: Date;
 
-  @Prop({ default: USERS_ROLES.USER })
+  @Prop({ default: USERS_ROLES.CUSTOMER })
   @IsEnum(USERS_ROLES, {
-    message: 'role field must be of either user or admin.',
+    message: 'role field must be of either Customer or Admin or Seller.',
   })
   role: string;
 
