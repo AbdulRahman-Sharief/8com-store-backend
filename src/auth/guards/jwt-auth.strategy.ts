@@ -22,10 +22,10 @@ export class JwtGuardStrategy extends PassportStrategy(Strategy) {
 
   //   return false;
   // }
-  async validate(payload: { _id: string; iat: number; exp: number }) {
+  async validate(payload: { sub: string; iat: number; exp: number }) {
     console.log('payload: ', payload);
 
-    const user = await this.userService.findUserById(payload._id);
+    const user = await this.userService.findUserById(payload.sub);
     // console.log(user);
     // console.log(new Date(user.passwordChangedAt));
     // if (this.changePasswordAfter(user, payload.iat)) {
@@ -34,6 +34,6 @@ export class JwtGuardStrategy extends PassportStrategy(Strategy) {
     //     401,
     //   );
     // }
-    return { userId: payload._id, user };
+    return { userId: payload.sub, user };
   }
 }
