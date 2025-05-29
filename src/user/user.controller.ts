@@ -36,7 +36,29 @@ export class UserController {
       throw new Error('Internal Server Error');
     }
   }
-
+  @Get('/profile')
+  async getUserInfo(@Req() req: Request, @Res() res: Response) {
+    try {
+      const userId = req.user.userId;
+      console.log('User ID from request:', userId);
+      const user = await this.userService.findUserById(userId);
+      if (!user) {
+        return res.status(HttpStatus.NOT_FOUND).json({
+          message: 'User not found',
+        });
+      }
+      return res.status(HttpStatus.OK).json({
+        statusCode: HttpStatus.OK,
+        message: 'User retrieved successfully',
+        data: user,
+      });
+    } catch (error) {
+      console.error('Error retrieving user:', error);
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        message: 'Internal Server Error',
+      });
+    }
+  }
   @Get(':id')
   async findOne(@Param('id') userId: string, @Res() res: Response) {
     try {
