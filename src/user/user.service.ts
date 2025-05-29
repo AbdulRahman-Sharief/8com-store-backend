@@ -19,9 +19,27 @@ export class UserService {
         const message = `Invalid ${err.path}`;
         throw new HttpException(message, 400);
       }
+      if (err.code === 11000) {
+        const field = Object.keys(err.keyValue)[0];
+        const message = `Duplicate key error: ${field} already exists`;
+        throw new HttpException(message, 400);
+      }
+
+      throw new HttpException('Internal Server Error', 500);
     }
   }
 
+  async findByEmailAndPhone(
+    email: string,
+    phone: string,
+  ): Promise<UserDocument> {
+    try {
+      return await this.UserModel.findOne({ email, phone });
+    } catch (error) {
+      console.error('Error finding user by email and phone:', error);
+      throw new HttpException('Internal Server Error', 500);
+    }
+  }
   async findAll(): Promise<UserDocument[]> {
     return this.UserModel.find().exec();
   }
