@@ -7,17 +7,23 @@ import {
   Res,
   HttpStatus,
   Req,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 
 import { UpdateUserDTO } from './dto/update-user.dto';
 import { Request, Response } from 'express';
+import { Roles } from 'src/decorators/roles.decorator';
+import { RolesGuard } from 'src/auth/guards/role-auth.guard';
+import { USERS_ROLES } from 'config/constants/constants';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
+  @UseGuards(RolesGuard)
+  @Roles([USERS_ROLES.ADMIN])
   async findAll(@Res() res: Response) {
     try {
       const users = await this.userService.findAll();
@@ -60,6 +66,8 @@ export class UserController {
     }
   }
   @Get(':id')
+  @UseGuards(RolesGuard)
+  @Roles([USERS_ROLES.ADMIN])
   async findOne(@Param('id') userId: string, @Res() res: Response) {
     try {
       const user = await this.userService.findUserById(userId);
