@@ -1,26 +1,186 @@
 import { Injectable } from '@nestjs/common';
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
-
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { ProductEntity } from './entities/product.entity';
+import { UserEntity } from '../user/entities/user.entity';
+import { CreateProductDTO } from './dto/create-product.dto';
+// import { v4 as uuidv4 } from 'uuid';
+// import { extname } from 'path';
+// import { promises as fs } from 'fs';
+import { UpdateProductDTO } from './dto/update-product.dto';
+import { CategoryService } from 'src/category/category.service';
+// import { Types } from 'mongoose';
+// import { filter } from 'rxjs';
 @Injectable()
 export class ProductService {
-  create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+  constructor(
+    @InjectModel('User') private UserModel: Model<UserEntity>,
+    @InjectModel('Product') private ProductModel: Model<ProductEntity>,
+    private categoryService: CategoryService,
+  ) {}
+
+  async createProduct({
+    name,
+    description,
+    price,
+    tags,
+    category,
+    photos,
+  }: CreateProductDTO & {
+    photos?: object[];
+  }): Promise<ProductEntity> {
+    const newProduct = new this.ProductModel({
+      name,
+      description,
+      price,
+      tags,
+      photos,
+      category,
+    });
+
+    return await newProduct.save();
   }
 
-  findAll() {
-    return `This action returns all product`;
+  async updateProduct(
+    productId: string,
+    { photos, ...sanitizedBody }: UpdateProductDTO & { photos?: object[] },
+  ): Promise<ProductEntity> {
+    try {
+      const filesToUpdate = {} as any;
+      if (photos.length > 0) filesToUpdate.photos = photos;
+      return await this.ProductModel.findByIdAndUpdate(
+        productId,
+        {
+          $set: {
+            ...filesToUpdate,
+            ...sanitizedBody,
+          },
+        },
+        { new: true, runValidators: true },
+      );
+    } catch (error) {
+      return error;
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} product`;
+  async deleteProduct(productId: string) {
+    return await this.ProductModel.findByIdAndDelete(productId);
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+  async getAllProductsOfStore(queryOptions: {
+    page?: number;
+    limit?: number;
+    [key: string]: any;
+  }) {
+    const { page = 1, limit = 10, ...filters } = queryOptions;
+    console.log('queryOptions', filters);
+
+    const allProducts = await this.ProductModel.find(filters)
+      .sort({ createdAt: -1 })
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .populate('category');
+
+    const totalProducts = await this.ProductModel.countDocuments(filters);
+
+    return {
+      products: allProducts,
+      totalProducts,
+      totalPages: Math.ceil(totalProducts / limit),
+      currentPage: page,
+    };
+  }
+  async getAllProductsOfCategory(
+    queryOptions: {
+      page?: number;
+      limit?: number;
+      [key: string]: any;
+    },
+    categoryId: string,
+  ) {
+    const { page = 1, limit = 10, ...filters } = queryOptions;
+    if (categoryId) {
+      filters['category'] = categoryId;
+    }
+
+    console.log('queryOptions', filters);
+    const allProducts = await this.ProductModel.find(filters)
+      .sort({ createdAt: -1 })
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .populate('category');
+    const totalProducts = await this.ProductModel.countDocuments(filters);
+    return {
+      products: allProducts,
+      totalProducts,
+      totalPages: Math.ceil(totalProducts / limit),
+      currentPage: page,
+    };
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} product`;
+  async getOneProduct(productId: string): Promise<ProductEntity> {
+    return await this.ProductModel.findById(productId).populate('category');
+  }
+
+  // async getAllProductsWithIds(productIds: string[]): Promise<ProductEntity[]> {
+  //   return await this.ProductModel.find({ _id: { $in: productIds } }).populate(
+  //     'category',
+  //   );
+  // }
+
+  async searchProducts(
+    queryOptions: {
+      page?: number;
+      limit?: number;
+      [key: string]: any;
+    },
+    name?: string,
+    tags?: string[],
+    categoryIds?: string[],
+    minPrice?: string,
+    maxPrice?: string,
+  ) {
+    const query: any = {};
+    if (name) {
+      // Use a regular expression that matches the start of the string
+      query.name = new RegExp(`^${name}`, 'i');
+    }
+
+    if (tags && tags.length > 0) {
+      query.tags = { $in: tags };
+    }
+
+    if (minPrice !== undefined && maxPrice !== undefined) {
+      query.price = { $gte: Number(minPrice), $lte: Number(maxPrice) };
+    } else if (minPrice !== undefined) {
+      query.price = { $gte: Number(minPrice) };
+    } else if (maxPrice !== undefined) {
+      query.price = { $lte: Number(maxPrice) };
+    }
+    if (categoryIds && categoryIds.length > 0) {
+      query['category'] = { $in: categoryIds };
+    }
+    const { page = 1, limit = 10, ...filters } = queryOptions;
+    const productsResults = await this.ProductModel.find(query)
+      .sort({ createdAt: -1 })
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .populate('category');
+
+    const totalProductsResults = await this.ProductModel.countDocuments(query);
+
+    return {
+      products: productsResults,
+      totalProductsResults,
+      totalPages: Math.ceil(totalProductsResults / limit),
+      currentPage: page,
+    };
+  }
+
+  async getNumberOfProductsInCategory(categoryId: string): Promise<number> {
+    const numberOfProducts = await this.ProductModel.countDocuments({
+      category: categoryId,
+    });
+    return numberOfProducts;
   }
 }

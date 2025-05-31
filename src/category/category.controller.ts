@@ -157,6 +157,15 @@ export class CategoryController {
         message: 'not valid category ID.',
       });
     try {
+      //check if the category has products.
+      const { totalProducts: productsCount } =
+        await this.productService.getAllProductsOfCategory({}, categoryId);
+      if (productsCount > 0) {
+        return res.status(HttpStatus.CONFLICT).json({
+          status: 'failed',
+          message: 'This category has products.',
+        });
+      }
       //delete
 
       const deletedCategory =
