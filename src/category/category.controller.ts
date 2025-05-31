@@ -158,7 +158,7 @@ export class CategoryController {
       });
     try {
       //check if the category has products.
-      const { totalProducts: productsCount } =
+      const { totalProductsCount: productsCount } =
         await this.productService.getAllProductsOfCategory({}, categoryId);
       if (productsCount > 0) {
         return res.status(HttpStatus.CONFLICT).json({

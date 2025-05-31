@@ -298,12 +298,12 @@ export class ProductController {
   @Public()
   @Get()
   async getAllProductsOfStore(
-    @Query('page') page = 1,
-    @Query('limit') limit = 10,
     @Res() res: Response,
+    @Query('cursor') cursor?: string,
+    @Query('limit') limit = 10,
   ) {
     const productsResult = await this.productService.getAllProductsOfStore({
-      page: Number(page),
+      cursor: cursor,
       limit: Number(limit),
     });
 
@@ -374,10 +374,10 @@ export class ProductController {
   //get ll products of specific category
   @Get('/category/:categoryId')
   async getAllProductsOfCategory(
-    @Param('categoryId') categoryId: string,
-    @Query('page') page = 1,
-    @Query('limit') limit = 10,
     @Res() res: Response,
+    @Param('categoryId') categoryId: string,
+    @Query('limit') limit = 10,
+    @Query('cursor') cursor?: string,
   ) {
     if (
       !(
@@ -400,19 +400,19 @@ export class ProductController {
       });
 
     const productsResult = await this.productService.getAllProductsOfCategory(
-      { page: Number(page), limit: Number(limit) },
+      { cursor, limit: Number(limit) },
       categoryId,
     );
 
     if (!productsResult.products || productsResult.products.length <= 0)
       return res.status(HttpStatus.NOT_FOUND).json({
         status: 'failed',
-        message: `no products in store: ${categoryDB.title}`,
+        message: `no products in category: ${categoryDB.title}`,
       });
 
     return res.status(HttpStatus.OK).json({
       status: 'success',
-      message: `Successfully retrieved all products of store: ${categoryDB.title}`,
+      message: `Successfully retrieved all products of category: ${categoryDB.title}`,
       data: {
         products: productsResult.products.map((product) => {
           if (product.photos.length >= 0) {
@@ -437,7 +437,7 @@ export class ProductController {
     @Query('parentCategoryId') parentCategoryId?: string,
     @Query('minPrice') minPrice?: string,
     @Query('maxPrice') maxPrice?: string,
-    @Query('page') page = 1,
+    @Query('cursor') cursor?: string,
     @Query('limit') limit = 10,
   ) {
     if (!parentCategoryId && !searchTerm && !tags && !minPrice && !maxPrice) {
@@ -475,7 +475,7 @@ export class ProductController {
     console.log(categoryIds);
     console.log(Number(minPrice), Number(maxPrice));
     const productsResults = await this.productService.searchProducts(
-      { page: Number(page), limit: Number(limit) },
+      { cursor, limit: Number(limit) },
       searchTerm,
       tags,
       categoryIds,

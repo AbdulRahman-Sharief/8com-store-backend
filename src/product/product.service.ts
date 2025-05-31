@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, SortOrder } from 'mongoose';
+import { Model, SortOrder, Types } from 'mongoose';
 import { ProductEntity } from './entities/product.entity';
 import { UserEntity } from '../user/entities/user.entity';
 import { CreateProductDTO } from './dto/create-product.dto';
@@ -68,53 +68,89 @@ export class ProductService {
   }
 
   async getAllProductsOfStore(queryOptions: {
-    page?: number;
     limit?: number;
+    cursor?: string; // The last _id from previous query
     [key: string]: any;
   }) {
-    const { page = 1, limit = 10, ...filters } = queryOptions;
+    const { limit = 10, cursor, ...filters } = queryOptions;
     console.log('queryOptions', filters);
 
-    const allProducts = await this.ProductModel.find(filters)
-      .sort({ createdAt: -1 })
-      .skip((page - 1) * limit)
-      .limit(limit)
-      .populate('category');
+    // Build the query filter
+    const query: any = { ...filters };
 
-    const totalProducts = await this.ProductModel.countDocuments(filters);
+    if (cursor) {
+      query._id = { $lt: new Types.ObjectId(cursor) };
+    }
+
+    // Query products sorted by _id descending (newest first)
+    const products = await this.ProductModel.find(query)
+      .sort({ _id: -1 })
+      .limit(limit + 1) // fetch one extra to check if there's a next page
+      .populate('category');
+    console.log('products', products);
+    let nextCursor: string | null = null;
+
+    if (products.length > limit) {
+      // We have extra product, so pagination continues
+      const extraProduct = products.pop(); // remove extra product
+      // nextCursor is the _id of the last product currently returned (not the popped one)
+      nextCursor = products[products.length - 1]._id.toString();
+    } else if (products.length > 0) {
+      // no extra product, so last product's _id is the nextCursor null (end of pages)
+      nextCursor = null;
+    }
+
+    const totalProductsCount = await this.ProductModel.countDocuments(filters);
 
     return {
-      products: allProducts,
-      totalProducts,
-      totalPages: Math.ceil(totalProducts / limit),
-      currentPage: page,
+      products: products,
+      totalProductsCount,
+      nextCursor,
     };
   }
   async getAllProductsOfCategory(
     queryOptions: {
-      page?: number;
+      cursor?: string;
       limit?: number;
       [key: string]: any;
     },
     categoryId: string,
   ) {
-    const { page = 1, limit = 10, ...filters } = queryOptions;
+    const { cursor, limit = 10, ...filters } = queryOptions;
+
     if (categoryId) {
       filters['category'] = categoryId;
     }
+    const totalProductsCount = await this.ProductModel.countDocuments(filters);
+
+    // If a cursor is provided, only get products with _id < cursor (for descending order)
+    if (cursor) {
+      filters['_id'] = { $lt: new Types.ObjectId(cursor) };
+    }
 
     console.log('queryOptions', filters);
-    const allProducts = await this.ProductModel.find(filters)
-      .sort({ createdAt: -1 })
-      .skip((page - 1) * limit)
-      .limit(limit)
+
+    // Fetch limit + 1 products to detect if there’s a next page
+    const products = await this.ProductModel.find(filters)
+      .sort({ _id: -1 }) // descending
+      .limit(limit + 1)
       .populate('category');
-    const totalProducts = await this.ProductModel.countDocuments(filters);
+
+    let nextCursor: string | null = null;
+
+    // If we got more than limit, we have a next page
+    if (products.length > limit) {
+      // Remove extra product for this page
+      const extraProduct = products.pop();
+
+      // nextCursor will be the _id of the last product in the returned page
+      nextCursor = products[products.length - 1]._id.toString();
+    }
+
     return {
-      products: allProducts,
-      totalProducts,
-      totalPages: Math.ceil(totalProducts / limit),
-      currentPage: page,
+      products,
+      totalProductsCount,
+      nextCursor,
     };
   }
 
@@ -130,7 +166,7 @@ export class ProductService {
 
   async searchProducts(
     queryOptions: {
-      page?: number;
+      cursor?: string;
       limit?: number;
       [key: string]: any;
     },
@@ -141,7 +177,7 @@ export class ProductService {
     maxPrice?: string,
   ) {
     const query: any = {};
-    // Full-text search on name + description
+
     if (searchTerm) {
       query.$text = { $search: searchTerm };
     }
@@ -157,34 +193,44 @@ export class ProductService {
     } else if (maxPrice !== undefined) {
       query.price = { $lte: Number(maxPrice) };
     }
+
     if (categoryIds && categoryIds.length > 0) {
       query['category'] = { $in: categoryIds };
     }
-    const { page = 1, limit = 10, ...filters } = queryOptions;
 
-    // Use text score for sorting by relevance if $text search is used
-    const sortBy: { [key: string]: SortOrder | { $meta: 'textScore' } } =
-      searchTerm
-        ? { score: { $meta: 'textScore' }, createdAt: -1 }
-        : { createdAt: -1 };
+    const { cursor, limit = 10, ...filters } = queryOptions;
 
-    // Build the query with projection for score if using text search
-    const productsResults = await this.ProductModel.find(
-      query,
-      searchTerm ? { score: { $meta: 'textScore' } } : {},
-    )
-      .sort(sortBy)
-      .skip((page - 1) * limit)
-      .limit(limit)
-      .populate('category');
-
+    // 1️⃣ Calculate totalProductsResults **before** adding cursor condition
     const totalProductsResults = await this.ProductModel.countDocuments(query);
 
+    // 2️⃣ Now add the cursor to the query for pagination
+    if (cursor) {
+      query['_id'] = { $lt: new Types.ObjectId(cursor) };
+    }
+
+    // 3️⃣ Determine sorting and projection
+    const sortBy: { [key: string]: SortOrder | { $meta: 'textScore' } } =
+      searchTerm ? { score: { $meta: 'textScore' }, _id: -1 } : { _id: -1 };
+
+    const projection = searchTerm ? { score: { $meta: 'textScore' } } : {};
+
+    // 4️⃣ Fetch limit + 1 to determine if next page exists
+    const products = await this.ProductModel.find(query, projection)
+      .sort(sortBy)
+      .limit(limit + 1)
+      .populate('category');
+
+    let nextCursor: string | null = null;
+
+    if (products.length > limit) {
+      products.pop();
+      nextCursor = products[products.length - 1]._id.toString();
+    }
+
     return {
-      products: productsResults,
+      products,
       totalProductsResults,
-      totalPages: Math.ceil(totalProductsResults / limit),
-      currentPage: page,
+      nextCursor,
     };
   }
 
