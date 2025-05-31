@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, SortOrder } from 'mongoose';
 import { ProductEntity } from './entities/product.entity';
 import { UserEntity } from '../user/entities/user.entity';
 import { CreateProductDTO } from './dto/create-product.dto';
@@ -134,16 +134,16 @@ export class ProductService {
       limit?: number;
       [key: string]: any;
     },
-    name?: string,
+    searchTerm?: string,
     tags?: string[],
     categoryIds?: string[],
     minPrice?: string,
     maxPrice?: string,
   ) {
     const query: any = {};
-    if (name) {
-      // Use a regular expression that matches the start of the string
-      query.name = new RegExp(`^${name}`, 'i');
+    // Full-text search on name + description
+    if (searchTerm) {
+      query.$text = { $search: searchTerm };
     }
 
     if (tags && tags.length > 0) {
@@ -161,8 +161,19 @@ export class ProductService {
       query['category'] = { $in: categoryIds };
     }
     const { page = 1, limit = 10, ...filters } = queryOptions;
-    const productsResults = await this.ProductModel.find(query)
-      .sort({ createdAt: -1 })
+
+    // Use text score for sorting by relevance if $text search is used
+    const sortBy: { [key: string]: SortOrder | { $meta: 'textScore' } } =
+      searchTerm
+        ? { score: { $meta: 'textScore' }, createdAt: -1 }
+        : { createdAt: -1 };
+
+    // Build the query with projection for score if using text search
+    const productsResults = await this.ProductModel.find(
+      query,
+      searchTerm ? { score: { $meta: 'textScore' } } : {},
+    )
+      .sort(sortBy)
       .skip((page - 1) * limit)
       .limit(limit)
       .populate('category');

@@ -432,7 +432,7 @@ export class ProductController {
   @Get('search/all')
   async search(
     @Res() res: Response,
-    @Query('name') name?: string,
+    @Query('searchTerm') searchTerm?: string,
     @Query('tags') tags?: string[],
     @Query('parentCategoryId') parentCategoryId?: string,
     @Query('minPrice') minPrice?: string,
@@ -440,7 +440,7 @@ export class ProductController {
     @Query('page') page = 1,
     @Query('limit') limit = 10,
   ) {
-    if (!parentCategoryId && !name && !tags && !minPrice && !maxPrice) {
+    if (!parentCategoryId && !searchTerm && !tags && !minPrice && !maxPrice) {
       return res.status(HttpStatus.OK).json({
         status: 'failed',
         message: "You didn't send any search parameter!",
@@ -476,7 +476,7 @@ export class ProductController {
     console.log(Number(minPrice), Number(maxPrice));
     const productsResults = await this.productService.searchProducts(
       { page: Number(page), limit: Number(limit) },
-      name,
+      searchTerm,
       tags,
       categoryIds,
       minPrice,

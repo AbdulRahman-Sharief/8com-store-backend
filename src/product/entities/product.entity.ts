@@ -39,3 +39,6 @@ export class ProductEntity {
 }
 
 export const ProductSchema = SchemaFactory.createForClass(ProductEntity);
+
+// text index for full-text search in mongodb engine
+ProductSchema.index({ name: 'text', description: 'text' });
