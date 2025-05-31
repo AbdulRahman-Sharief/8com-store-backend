@@ -1,6 +1,7 @@
 import { Global, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { CategorySchema } from 'src/category/entities/category.entity';
 import { UserSchema } from 'src/user/entities/user.entity';
 
 @Global()
@@ -13,6 +14,8 @@ import { UserSchema } from 'src/user/entities/user.entity';
       // autoIndex: true,
     }),
     MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
+    MongooseModule.forFeature([{ name: 'Category', schema: CategorySchema }]),
+    // MongooseModule.forFeature([{ name: 'Product', schema: ProductSchema }]),
   ],
   exports: [MongooseModule],
 })
