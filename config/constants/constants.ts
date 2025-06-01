@@ -3,3 +3,9 @@ export const USERS_ROLES = {
   ADMIN: 'Admin',
   SELLER: 'Seller',
 };
+
+export const CARTS_ACTIONS = {
+  ADD: 'add',
+  REMOVE: 'remove',
+  UPDATE: 'update',
+};

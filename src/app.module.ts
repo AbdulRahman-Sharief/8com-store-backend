@@ -11,6 +11,7 @@ import { JwtGuard } from './auth/guards/jwt-auth.guard';
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 import { UploadModule } from './upload/upload.module';
+import { CartModule } from './cart/cart.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, envFilePath: ['.env'] }),
@@ -20,6 +21,7 @@ import { UploadModule } from './upload/upload.module';
     ProductModule,
     CategoryModule,
     UploadModule,
+    CartModule,
   ],
   controllers: [AppController],
   providers: [
