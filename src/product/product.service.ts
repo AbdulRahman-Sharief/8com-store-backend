@@ -113,6 +113,51 @@ export class ProductService {
       nextCursor,
     };
   }
+  async getAllProductsOfSeller(
+    queryOptions: {
+      cursor?: string;
+      limit?: number;
+      [key: string]: any;
+    },
+    sellerId: string,
+  ) {
+    const { cursor, limit = 10, ...filters } = queryOptions;
+
+    if (sellerId) {
+      filters['owner'] = sellerId;
+    }
+    const totalProductsCount = await this.ProductModel.countDocuments(filters);
+
+    // If a cursor is provided, only get products with _id < cursor (for descending order)
+    if (cursor) {
+      filters['_id'] = { $lt: new Types.ObjectId(cursor) };
+    }
+
+    console.log('queryOptions', filters);
+
+    // Fetch limit + 1 products to detect if there’s a next page
+    const products = await this.ProductModel.find(filters)
+      .sort({ _id: -1 }) // descending
+      .limit(limit + 1)
+      .populate('category owner');
+
+    let nextCursor: string | null = null;
+
+    // If we got more than limit, we have a next page
+    if (products.length > limit) {
+      // Remove extra product for this page
+      const extraProduct = products.pop();
+
+      // nextCursor will be the _id of the last product in the returned page
+      nextCursor = products[products.length - 1]._id.toString();
+    }
+
+    return {
+      products,
+      totalProductsCount,
+      nextCursor,
+    };
+  }
   async getAllProductsOfCategory(
     queryOptions: {
       cursor?: string;

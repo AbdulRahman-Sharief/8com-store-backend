@@ -31,12 +31,14 @@ import { RolesGuard } from 'src/auth/guards/role-auth.guard';
 import { Roles } from 'src/decorators/roles.decorator';
 import { USERS_ROLES } from 'config/constants/constants';
 import { Public } from 'src/decorators/Public.decorator';
+import { UserService } from 'src/user/user.service';
 @Controller('product')
 export class ProductController {
   constructor(
     private readonly productService: ProductService,
     private readonly categoryService: CategoryService,
     private readonly uploadService: UploadService,
+    private readonly userService: UserService,
   ) {}
 
   @Post()
@@ -257,9 +259,10 @@ export class ProductController {
 
   @Delete(':productId')
   @UseGuards(RolesGuard)
-  @Roles([USERS_ROLES.ADMIN])
+  @Roles([USERS_ROLES.ADMIN, USERS_ROLES.SELLER])
   async deleteProduct(
     @Param('productId') productId: string,
+    @Req() req: Request,
     @Res() res: Response,
   ) {
     if (
@@ -274,6 +277,7 @@ export class ProductController {
       });
 
     try {
+      const user = req.user.user;
       //check if the product exist.
       const productDB = await this.productService.getOneProduct(productId);
       if (!productDB)
@@ -281,7 +285,14 @@ export class ProductController {
           status: 'failed',
           message: 'no product with such Id.',
         });
-
+      if (user.role === USERS_ROLES.SELLER) {
+        if (user._id.toString() !== productDB.owner._id.toString()) {
+          return res.status(HttpStatus.FORBIDDEN).json({
+            status: 'failed',
+            message: 'You are not allowed to delete this product.',
+          });
+        }
+      }
       const deletedProduct = await this.productService.deleteProduct(productId);
 
       await this.uploadService.deleteMultiplePhotos(
@@ -516,6 +527,62 @@ export class ProductController {
           return product;
         }),
         ...productsResults,
+      },
+    });
+  }
+
+  @Public()
+  @Get('/seller/:sellerId')
+  async getAllProductsOfSeller(
+    @Res() res: Response,
+    @Param('sellerId') sellerId: string,
+    @Query('limit') limit = 10,
+    @Query('cursor') cursor?: string,
+  ) {
+    if (
+      !(
+        Types.ObjectId.isValid(sellerId) &&
+        new Types.ObjectId(sellerId).toString() === sellerId
+      )
+    )
+      return res.status(HttpStatus.BAD_REQUEST).json({
+        status: 'failed',
+        message: 'not valid seller ID.',
+      });
+
+    const sellerDB = await this.userService.findSellerById(sellerId);
+
+    if (!sellerDB)
+      return res.status(HttpStatus.OK).json({
+        status: 'failed',
+        message: 'no Seller with such ID.',
+      });
+
+    const productsResult = await this.productService.getAllProductsOfSeller(
+      { cursor, limit: Number(limit) },
+      sellerId,
+    );
+
+    if (!productsResult.products || productsResult.products.length <= 0)
+      return res.status(HttpStatus.NOT_FOUND).json({
+        status: 'failed',
+        message: `no products for seller: ${sellerDB.firstName} ${sellerDB.lastName}`,
+      });
+
+    return res.status(HttpStatus.OK).json({
+      status: 'success',
+      message: `Successfully retrieved all products for seller: ${sellerDB.firstName} ${sellerDB.lastName}`,
+      data: {
+        products: productsResult.products.map((product) => {
+          if (product.photos.length >= 0) {
+            product.photos = product.photos.map((photo) => {
+              photo.url = `${process.env.BACKEND_ORIGIN}/api/products/${photo.url.split('/')[photo.url.split('/').length - 1]}`;
+              return photo;
+            });
+          }
+          return product;
+        }),
+        ...productsResult,
       },
     });
   }

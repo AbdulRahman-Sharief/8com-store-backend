@@ -4,6 +4,7 @@ import { UserDocument, UserEntity } from './entities/user.entity';
 import mongoose, { Model } from 'mongoose';
 import { CreateUserDTO } from './dto/create-user.dto';
 import { UpdateUserDTO } from './dto/update-user.dto';
+import { USERS_ROLES } from 'config/constants/constants';
 
 @Injectable()
 export class UserService {
@@ -52,6 +53,27 @@ export class UserService {
       console.log(id);
 
       const user = await this.UserModel.findById(id);
+      console.log(user);
+      return user;
+    } catch (err) {
+      console.log(err);
+      if (err.name === 'CastError') {
+        const message = `Resource Not found. Invalid ${err.path}`;
+        throw new HttpException(message, 400);
+      }
+    }
+  }
+  async findSellerById(id: string): Promise<UserDocument> {
+    try {
+      if (!mongoose.Types.ObjectId.isValid(id)) {
+        throw new HttpException('Invalid ID format', 400);
+      }
+      console.log(id);
+
+      const user = await this.UserModel.findOne({
+        _id: id,
+        role: USERS_ROLES.SELLER,
+      });
       console.log(user);
       return user;
     } catch (err) {
