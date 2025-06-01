@@ -12,6 +12,7 @@ import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 import { UploadModule } from './upload/upload.module';
 import { CartModule } from './cart/cart.module';
+import { OrderModule } from './order/order.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, envFilePath: ['.env'] }),
@@ -22,6 +23,7 @@ import { CartModule } from './cart/cart.module';
     CategoryModule,
     UploadModule,
     CartModule,
+    OrderModule,
   ],
   controllers: [AppController],
   providers: [

@@ -1,0 +1,3497 @@
+{
+	"info": {
+		"_postman_id": "31982dc5-33e2-4971-80de-23296019ec59",
+		"name": "8com-store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22527885"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get All Users --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/user",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users --protected",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/user",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1858"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"742-3wy024zvlRbhgQk4dONS8hcOraw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 12:43:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Users retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"683837dca9f373fead8484f8\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455528\",\n            \"email\": \"abdulrahman@gmail.com\",\n            \"password\": \"$2b$12$.kHxOQedNVc.KU1zjIsjEu3udOBtNL0Fq5xkg8mi9IUuK1mSIGDwq\",\n            \"passwordChangedAt\": \"2025-05-29T10:32:04.883Z\",\n            \"role\": \"ADMIN\",\n            \"createdAt\": \"2025-05-29T10:33:00.558Z\",\n            \"updatedAt\": \"2025-05-29T10:33:00.558Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68383ad9a5a10a50d502cdb3\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455522\",\n            \"email\": \"abdulrahman2@gmail.com\",\n            \"password\": \"$2b$12$IbVVWyLZnA/mcIE.wwh3weplWmb4C8hC2yPnCwI/ZP5rg8bmBJNEe\",\n            \"passwordChangedAt\": \"2025-05-29T10:45:39.539Z\",\n            \"role\": \"USER\",\n            \"createdAt\": \"2025-05-29T10:45:45.677Z\",\n            \"updatedAt\": \"2025-05-29T10:45:45.677Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"683846bdc2a71cc621002514\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455523\",\n            \"email\": \"abdulrahman3@gmail.com\",\n            \"password\": \"$2b$12$K33j4eRTkRfzb3ji2cpGdOZU7T5MAL/UUbtz5JbXJApAMP4ynu6Gq\",\n            \"passwordChangedAt\": \"2025-05-29T11:36:25.851Z\",\n            \"role\": \"USER\",\n            \"createdAt\": \"2025-05-29T11:36:29.184Z\",\n            \"updatedAt\": \"2025-05-29T11:36:29.184Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68384ab0af81f9fe8ac3fa43\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455524\",\n            \"email\": \"abdulrahman4@gmail.com\",\n            \"password\": \"$2b$12$KGg9agPzBrW7jm8DxLE6iO./xGyfRPoQVdbiCWjWLq5M5PdBN862.\",\n            \"passwordChangedAt\": \"2025-05-29T11:53:13.133Z\",\n            \"role\": \"USER\",\n            \"createdAt\": \"2025-05-29T11:53:20.578Z\",\n            \"updatedAt\": \"2025-05-29T11:53:20.578Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68384b4205f33d4c8e68c16d\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455525\",\n            \"email\": \"abdulrahman5@gmail.com\",\n            \"password\": \"$2b$12$H2Z/1uZNp8ZBh12Ce9QhQuzka0WBN.skRBLv4c2irDZYYOi6rm1di\",\n            \"passwordChangedAt\": \"2025-05-29T11:55:30.793Z\",\n            \"role\": \"USER\",\n            \"createdAt\": \"2025-05-29T11:55:46.977Z\",\n            \"updatedAt\": \"2025-05-29T11:55:46.977Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User By Id --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/user/683837dca9f373fead8484f8",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"user",
+								"683837dca9f373fead8484f8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user by id --protected",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/user/683837dca9f373fead8484f8",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"user",
+										"683837dca9f373fead8484f8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "423"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a7-NETa+cPItvD7YanMqdkOlfA9BF0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 12:44:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"_id\": \"683837dca9f373fead8484f8\",\n        \"firstName\": \"AbdulRahman\",\n        \"lastName\": \"Sharief\",\n        \"phone\": \"01045455528\",\n        \"email\": \"abdulrahman@gmail.com\",\n        \"password\": \"$2b$12$.kHxOQedNVc.KU1zjIsjEu3udOBtNL0Fq5xkg8mi9IUuK1mSIGDwq\",\n        \"passwordChangedAt\": \"2025-05-29T10:32:04.883Z\",\n        \"role\": \"ADMIN\",\n        \"createdAt\": \"2025-05-29T10:33:00.558Z\",\n        \"updatedAt\": \"2025-05-29T10:33:00.558Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User profile Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Hello2\", \r\n    \"lastName\":\"World2\",\r\n    \"phone\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/user",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update User profile data",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Hello2\", \r\n    \"lastName\":\"World2\",\r\n    \"phone\":\"0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/user",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "415"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19f-LNm/YeqvkxwpSA0NL1Jeu1fA4v8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 12:51:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"_id\": \"68383ad9a5a10a50d502cdb3\",\n        \"firstName\": \"Hello2\",\n        \"lastName\": \"World2\",\n        \"phone\": \"01045455522\",\n        \"email\": \"abdulrahman2@gmail.com\",\n        \"password\": \"$2b$12$IbVVWyLZnA/mcIE.wwh3weplWmb4C8hC2yPnCwI/ZP5rg8bmBJNEe\",\n        \"passwordChangedAt\": \"2025-05-29T10:45:39.539Z\",\n        \"role\": \"USER\",\n        \"createdAt\": \"2025-05-29T10:45:45.677Z\",\n        \"updatedAt\": \"2025-05-29T12:51:25.296Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get my profile --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/user/profile",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get my profile --protected",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/user/profile",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"user",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "417"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a1-aXJPxf+rFyF9prNXP96VanbBU64\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 13:13:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"_id\": \"68383ad9a5a10a50d502cdb3\",\n        \"firstName\": \"Hello2\",\n        \"lastName\": \"World2\",\n        \"phone\": \"01045455522\",\n        \"email\": \"abdulrahman2@gmail.com\",\n        \"password\": \"$2b$12$IbVVWyLZnA/mcIE.wwh3weplWmb4C8hC2yPnCwI/ZP5rg8bmBJNEe\",\n        \"passwordChangedAt\": \"2025-05-29T10:45:39.539Z\",\n        \"role\": \"USER\",\n        \"createdAt\": \"2025-05-29T10:45:45.677Z\",\n        \"updatedAt\": \"2025-05-29T12:51:25.296Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"TOKEN\", pm.response.json().accessToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"abdulrahman@gmail.com\",\r\n    \"phone\":\"01045455528\",\r\n    \"password\":\"N5b@9#XpR2c!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/auth/login",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"abdulrahman2@gmail.com\",\r\n    \"phone\":\"01045455522\",\r\n    \"password\":\"N5b@9#XpR2c!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/auth/login",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "458"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ca-WpuFdTJf+OCyqqMcCmo0AzuPLcM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 11:42:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login successful\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODM4M2FkOWE1YTEwYTUwZDUwMmNkYjMiLCJlbWFpbCI6ImFiZHVscmFobWFuMkBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc0ODUxODk3MSwiZXhwIjoxNzUxMTEwOTcxfQ.6R7Jaqog1PIXoOY15uyjLD4_BeLnDfv3v1X5Yi5OrNE\",\n    \"user\": {\n        \"id\": \"68383ad9a5a10a50d502cdb3\",\n        \"email\": \"abdulrahman2@gmail.com\",\n        \"role\": \"USER\",\n        \"firstName\": \"AbdulRahman\",\n        \"lastName\": \"Sharief\",\n        \"phone\": \"01045455522\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Sign up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"TOKEN\", pm.response.json().accessToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"AbdulRahman\", \r\n    \"lastName\":\"Sharief\", \r\n    \"role\":\"Seller\", \r\n    \"email\":\"abdulrahman6@gmail.com\",\r\n    \"phone\":\"01045455526\",\r\n    \"password\":\"N5b@9#XpR2c!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/auth/signup",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"AbdulRahman\", \r\n    \"lastName\":\"Sharief\", \r\n    \"role\":\"USER\", \r\n    \"email\":\"abdulrahman5@gmail.com\",\r\n    \"phone\":\"01045455525\",\r\n    \"password\":\"N5b@9#XpR2c!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/auth/signup",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "675"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a3-qpSSmRUC9GSVLVzs2cM2+YNQ8t4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 11:55:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User created successfully\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ODM4NGI0MjA1ZjMzZDRjOGU2OGMxNmQiLCJlbWFpbCI6ImFiZHVscmFobWFuNUBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc0ODUxOTc0NywiZXhwIjoxNzUxMTExNzQ3fQ.zHRKLG1gVc5a1UO4FJm7dfy5LlQqFSzjsz_5goKgWl8\",\n    \"user\": {\n        \"firstName\": \"AbdulRahman\",\n        \"lastName\": \"Sharief\",\n        \"phone\": \"01045455525\",\n        \"email\": \"abdulrahman5@gmail.com\",\n        \"password\": \"$2b$12$H2Z/1uZNp8ZBh12Ce9QhQuzka0WBN.skRBLv4c2irDZYYOi6rm1di\",\n        \"passwordChangedAt\": \"2025-05-29T11:55:30.793Z\",\n        \"role\": \"USER\",\n        \"_id\": \"68384b4205f33d4c8e68c16d\",\n        \"createdAt\": \"2025-05-29T11:55:46.977Z\",\n        \"updatedAt\": \"2025-05-29T11:55:46.977Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "Create category --protected --admin-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"cat1\", \r\n    \"description\":\"cat1 description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/category",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "if trying to fetch data without admin token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"cat1\", \r\n    \"description\":\"cat1 description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/category",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"category"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-MZJWZc+Y+RUbHpnhz2B2Vipii24\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:16:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden resource\",\n    \"error\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+						},
+						{
+							"name": "sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"cat1\", \r\n    \"description\":\"cat1 description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/category",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "243"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f3-CFFbDKtIF60dGiudHmRNb7F/f0A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:18:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created the category.\",\n    \"data\": {\n        \"title\": \"cat1\",\n        \"description\": \"cat1 description\",\n        \"_id\": \"683b39f2937b0433ebb1ae11\",\n        \"createdAt\": \"2025-05-31T17:18:42.444Z\",\n        \"updatedAt\": \"2025-05-31T17:18:42.444Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All categories --protected --admin-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/category",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/category",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-k53ft2cwSB7GlMW4TxOP5LIwwOs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:19:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully retrieved all categories.\",\n    \"data\": [\n        {\n            \"_id\": \"683b39f2937b0433ebb1ae11\",\n            \"title\": \"cat1\",\n            \"description\": \"cat1 description\",\n            \"createdAt\": \"2025-05-31T17:18:42.444Z\",\n            \"updatedAt\": \"2025-05-31T17:18:42.444Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One Category by Id --protected --admin-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/category/683b39f2937b0433ebb1ae11",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"category",
+								"683b39f2937b0433ebb1ae11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/category/683b39f2937b0433ebb1ae11",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"category",
+										"683b39f2937b0433ebb1ae11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f5-e01QKhv7UtcM3LuUc1VcQh728KA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:22:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully retrieved the category.\",\n    \"data\": {\n        \"_id\": \"683b39f2937b0433ebb1ae11\",\n        \"title\": \"cat1\",\n        \"description\": \"cat1 description\",\n        \"createdAt\": \"2025-05-31T17:18:42.444Z\",\n        \"updatedAt\": \"2025-05-31T17:18:42.444Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update One Category by id --protected --admin-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"cat updates1\"\r\n    // \"description\":\"cat updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/category/683b39f2937b0433ebb1ae11",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"category",
+								"683b39f2937b0433ebb1ae11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"cat updates1\"\r\n    // \"description\":\"cat updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/category/683b39f2937b0433ebb1ae11",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"category",
+										"683b39f2937b0433ebb1ae11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f5-gBCu+3+vCC/CudQzl6f+/ADlu2g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:23:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully updated the catgory.\",\n    \"data\": {\n        \"_id\": \"683b39f2937b0433ebb1ae11\",\n        \"title\": \"cat updates1\",\n        \"description\": \"cat updated\",\n        \"createdAt\": \"2025-05-31T17:18:42.444Z\",\n        \"updatedAt\": \"2025-05-31T17:23:47.618Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete One Category by id --protected --admin-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/category/683b39f2937b0433ebb1ae11",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"category",
+								"683b39f2937b0433ebb1ae11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/category/683b39f2937b0433ebb1ae11",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"category",
+										"683b39f2937b0433ebb1ae11"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10f-W0sD/MdFsygRyiOqnzycuJfv22U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:24:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "fail if category has products",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/category/683b54e5b9fa80fe525e6dc2",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"category",
+										"683b54e5b9fa80fe525e6dc2"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-P3cpdSBeLqi5VigtKlwUVsPbF6A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 19:16:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"This category has products.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Create product --protected --admin-seller-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "name4",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "desc",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "tag1",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "tag2",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "683b54e5b9fa80fe525e6dc2",
+									"type": "text"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Abdul/Downloads/develop-your-google-cloud-network-skill-badge.png"
+								},
+								{
+									"key": "stock",
+									"value": "300",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "desc",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag1",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag2",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "683b54e5b9fa80fe525e6dc2",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "654"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28e-o1chvAFM+U081jIROJaqCYFmcl0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 19:16:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully created the product.\",\n    \"data\": {\n        \"name\": \"name\",\n        \"description\": \"desc\",\n        \"price\": 2000,\n        \"photos\": [\n            {\n                \"public_id\": \"83645f65-588a-4cde-9c72-2a132d9e8e3d\",\n                \"url\": \"http://localhost:4000/api/products/83645f65-588a-4cde-9c72-2a132d9e8e3d.png\",\n                \"_id\": \"683b5579b9fa80fe525e6dce\"\n            },\n            {\n                \"public_id\": \"e11fe7ff-320e-4696-a506-a08e6f8582ff\",\n                \"url\": \"http://localhost:4000/api/products/e11fe7ff-320e-4696-a506-a08e6f8582ff.png\",\n                \"_id\": \"683b5579b9fa80fe525e6dcf\"\n            }\n        ],\n        \"tags\": [\n            \"tag1\",\n            \"tag2\"\n        ],\n        \"category\": \"683b54e5b9fa80fe525e6dc2\",\n        \"_id\": \"683b5579b9fa80fe525e6dcd\",\n        \"createdAt\": \"2025-05-31T19:16:09.973Z\",\n        \"updatedAt\": \"2025-05-31T19:16:09.973Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "stock added",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "desc",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag1",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag2",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "683b54e5b9fa80fe525e6dc2",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png"
+										},
+										{
+											"key": "stock",
+											"value": "300",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"147-DB4ci7XlKdIg9GSgw60Wm0uqM2c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 07:15:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully created the product.\",\n    \"data\": {\n        \"name\": \"name\",\n        \"description\": \"desc\",\n        \"price\": 2000,\n        \"stock\": 300,\n        \"photos\": [],\n        \"tags\": [\n            \"tag1\",\n            \"tag2\"\n        ],\n        \"category\": \"683b54e5b9fa80fe525e6dc2\",\n        \"_id\": \"683bfe0041cf120934e8119f\",\n        \"createdAt\": \"2025-06-01T07:15:12.154Z\",\n        \"updatedAt\": \"2025-06-01T07:15:12.154Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "owner added",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "desc",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag1",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag2",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "683b54e5b9fa80fe525e6dc2",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png"
+										},
+										{
+											"key": "stock",
+											"value": "300",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "362"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16a-Rep/Ie41fqvcFKoLs05UfEmkT50\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 07:30:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully created the product.\",\n    \"data\": {\n        \"name\": \"name\",\n        \"description\": \"desc\",\n        \"price\": 2000,\n        \"stock\": 300,\n        \"photos\": [],\n        \"tags\": [\n            \"tag1\",\n            \"tag2\"\n        ],\n        \"category\": \"683b54e5b9fa80fe525e6dc2\",\n        \"owner\": \"683837dca9f373fead8484f8\",\n        \"_id\": \"683c01a7ad1493046adcf278\",\n        \"createdAt\": \"2025-06-01T07:30:47.930Z\",\n        \"updatedAt\": \"2025-06-01T07:30:47.930Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update product --protected --admin-seller-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "name2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "desc2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "2002",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "tag4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "tag3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "683b54e5b9fa80fe525e6dc2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+									"disabled": true
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product/683c04440c3476a6c79b0a4a",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product",
+								"683c04440c3476a6c79b0a4a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name2",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "desc2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "2002",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag4",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag3",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "683b54e5b9fa80fe525e6dc2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/683b5579b9fa80fe525e6dcd",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"683b5579b9fa80fe525e6dcd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "656"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"290-5E2upUG5EdPL7tEb0iRWsjKhmxk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 19:18:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully updated the product.\",\n    \"data\": {\n        \"_id\": \"683b5579b9fa80fe525e6dcd\",\n        \"name\": \"name2\",\n        \"description\": \"desc2\",\n        \"price\": 2002,\n        \"photos\": [\n            {\n                \"public_id\": \"83645f65-588a-4cde-9c72-2a132d9e8e3d\",\n                \"url\": \"http://localhost:4000/api/products/83645f65-588a-4cde-9c72-2a132d9e8e3d.png\",\n                \"_id\": \"683b5579b9fa80fe525e6dce\"\n            },\n            {\n                \"public_id\": \"e11fe7ff-320e-4696-a506-a08e6f8582ff\",\n                \"url\": \"http://localhost:4000/api/products/e11fe7ff-320e-4696-a506-a08e6f8582ff.png\",\n                \"_id\": \"683b5579b9fa80fe525e6dcf\"\n            }\n        ],\n        \"tags\": [\n            \"tag4\",\n            \"tag3\"\n        ],\n        \"category\": \"683b54e5b9fa80fe525e6dc2\",\n        \"createdAt\": \"2025-05-31T19:16:09.973Z\",\n        \"updatedAt\": \"2025-05-31T19:18:36.620Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "stock updated",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "desc2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "2002",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tags[]",
+											"value": "tag3",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "683b54e5b9fa80fe525e6dc2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+											"disabled": true
+										},
+										{
+											"key": "stock",
+											"value": "400",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/683bfe0041cf120934e8119f",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"683bfe0041cf120934e8119f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"147-uLP31oYqUQM7nCqnxTAi+uegrPo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 07:15:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"successfully updated the product.\",\n    \"data\": {\n        \"_id\": \"683bfe0041cf120934e8119f\",\n        \"name\": \"name\",\n        \"description\": \"desc\",\n        \"price\": 2002,\n        \"stock\": 400,\n        \"photos\": [],\n        \"tags\": [\n            \"tag1\",\n            \"tag2\"\n        ],\n        \"category\": \"683b54e5b9fa80fe525e6dc2\",\n        \"createdAt\": \"2025-06-01T07:15:12.154Z\",\n        \"updatedAt\": \"2025-06-01T07:15:57.309Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "other sellers not allowed to update products that they are not owing",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "desc2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "2002",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "tag4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "tags[]",
+											"value": "tag3",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "683b54e5b9fa80fe525e6dc2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/C:/Users/Abdul/Downloads/set-up-a-google-cloud-network-skill-badge.png",
+											"disabled": true
+										},
+										{
+											"key": "stock",
+											"value": "500",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/683c04440c3476a6c79b0a4a",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"683c04440c3476a6c79b0a4a"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-kd2TSD4ckI7euli1iRqGvmKEQq4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 07:44:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"You are not allowed to update this product.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product?cursor=683b60615b37d0bc5aeaf3a4&limit=1",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product"
+							],
+							"query": [
+								{
+									"key": "cursor",
+									"value": "683b60615b37d0bc5aeaf3a4"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success with cursor-based pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product?cursor=683b60615b37d0bc5aeaf3a4&limit=1",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product"
+									],
+									"query": [
+										{
+											"key": "cursor",
+											"value": "683b60615b37d0bc5aeaf3a4"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "475"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1db-TRxPm9JlPkUNc7/68azSZrfvmp8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 20:49:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully retrieved all products\",\n    \"data\": {\n        \"products\": [\n            {\n                \"_id\": \"683b60615b37d0bc5aeaf3a3\",\n                \"name\": \"Apple iPhone 13\",\n                \"description\": \"Latest model with A15 Bionic chip\",\n                \"price\": 999,\n                \"tags\": [\n                    \"smartphone\",\n                    \"apple\"\n                ],\n                \"category\": {\n                    \"_id\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"title\": \"cat1\",\n                    \"description\": \"cat1 description\",\n                    \"createdAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"updatedAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"__v\": 0\n                },\n                \"photos\": []\n            }\n        ],\n        \"totalProductsCount\": 3,\n        \"nextCursor\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all products of category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product/category/683b54e5b9fa80fe525e6dc2?cursor=683b60615b37d0bc5aeaf3a4&limit=1",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product",
+								"category",
+								"683b54e5b9fa80fe525e6dc2"
+							],
+							"query": [
+								{
+									"key": "cursor",
+									"value": "683b60615b37d0bc5aeaf3a4"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all products of category with cursor-based pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/category/683b54e5b9fa80fe525e6dc2?cursor=683b60615b37d0bc5aeaf3a4&limit=1",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"category",
+										"683b54e5b9fa80fe525e6dc2"
+									],
+									"query": [
+										{
+											"key": "cursor",
+											"value": "683b60615b37d0bc5aeaf3a4"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "493"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ed-O/KOyyw5pWERZPTIud3pTQSkgOQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 21:03:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully retrieved all products of category: cat1\",\n    \"data\": {\n        \"products\": [\n            {\n                \"_id\": \"683b60615b37d0bc5aeaf3a3\",\n                \"name\": \"Apple iPhone 13\",\n                \"description\": \"Latest model with A15 Bionic chip\",\n                \"price\": 999,\n                \"tags\": [\n                    \"smartphone\",\n                    \"apple\"\n                ],\n                \"category\": {\n                    \"_id\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"title\": \"cat1\",\n                    \"description\": \"cat1 description\",\n                    \"createdAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"updatedAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"__v\": 0\n                },\n                \"photos\": []\n            }\n        ],\n        \"totalProductsCount\": 3,\n        \"nextCursor\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One product by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product/683b5579b9fa80fe525e6dcd",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product",
+								"683b5579b9fa80fe525e6dcd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/683b5579b9fa80fe525e6dcd",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"683b5579b9fa80fe525e6dcd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "830"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33e-kW1FyN4qOYOGWHJHy6e3v4KW0yU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 19:25:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully retrieved product with id : 683b5579b9fa80fe525e6dcd\",\n    \"data\": {\n        \"_id\": \"683b5579b9fa80fe525e6dcd\",\n        \"name\": \"name2\",\n        \"description\": \"desc2\",\n        \"price\": 2002,\n        \"photos\": [\n            {\n                \"public_id\": \"83645f65-588a-4cde-9c72-2a132d9e8e3d\",\n                \"url\": \"http://localhost:4000/api/products/83645f65-588a-4cde-9c72-2a132d9e8e3d.png\",\n                \"_id\": \"683b5579b9fa80fe525e6dce\"\n            },\n            {\n                \"public_id\": \"e11fe7ff-320e-4696-a506-a08e6f8582ff\",\n                \"url\": \"http://localhost:4000/api/products/e11fe7ff-320e-4696-a506-a08e6f8582ff.png\",\n                \"_id\": \"683b5579b9fa80fe525e6dcf\"\n            }\n        ],\n        \"tags\": [\n            \"tag4\",\n            \"tag3\"\n        ],\n        \"category\": {\n            \"_id\": \"683b54e5b9fa80fe525e6dc2\",\n            \"title\": \"cat1\",\n            \"description\": \"cat1 description\",\n            \"createdAt\": \"2025-05-31T19:13:41.631Z\",\n            \"updatedAt\": \"2025-05-31T19:13:41.631Z\",\n            \"__v\": 0\n        },\n        \"createdAt\": \"2025-05-31T19:16:09.973Z\",\n        \"updatedAt\": \"2025-05-31T19:18:36.620Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Search by product name or description (full-text search) with cursor based-pagination",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product/search/all?searchTerm=Apple&limit=2",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product",
+								"search",
+								"all"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "Apple"
+								},
+								{
+									"key": "tags",
+									"value": "tag3",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "tag4",
+									"disabled": true
+								},
+								{
+									"key": "parentCategoryId",
+									"value": "683b54e5b9fa80fe525e6dc2",
+									"disabled": true
+								},
+								{
+									"key": "minPrice",
+									"value": "1500",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "3000",
+									"disabled": true
+								},
+								{
+									"key": "cursor",
+									"value": "683b61a85b37d0bc5aeaf3a5",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search by product name or description (full-text search) with cursor-based pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/search/all?searchTerm=Apple&limit=2",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"search",
+										"all"
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "Apple"
+										},
+										{
+											"key": "tags",
+											"value": "tag3",
+											"disabled": true
+										},
+										{
+											"key": "tags",
+											"value": "tag4",
+											"disabled": true
+										},
+										{
+											"key": "parentCategoryId",
+											"value": "683b54e5b9fa80fe525e6dc2",
+											"disabled": true
+										},
+										{
+											"key": "minPrice",
+											"value": "1500",
+											"disabled": true
+										},
+										{
+											"key": "maxPrice",
+											"value": "3000",
+											"disabled": true
+										},
+										{
+											"key": "cursor",
+											"value": "683b61a85b37d0bc5aeaf3a5",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "878"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36e-5HaNMYl0hY5u/sUASszoQr32Sw0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 21:15:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully retrieved the products.\",\n    \"data\": {\n        \"products\": [\n            {\n                \"_id\": \"683b61a85b37d0bc5aeaf3a5\",\n                \"name\": \"Apple MacBook Pro\",\n                \"description\": \"Latest model with A15 Bionic chip\",\n                \"price\": 999,\n                \"tags\": [\n                    \"smartphone\",\n                    \"apple\"\n                ],\n                \"category\": {\n                    \"_id\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"title\": \"cat1\",\n                    \"description\": \"cat1 description\",\n                    \"createdAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"updatedAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"__v\": 0\n                },\n                \"photos\": [],\n                \"score\": 0.6666666666666666\n            },\n            {\n                \"_id\": \"683b60615b37d0bc5aeaf3a3\",\n                \"name\": \"Apple iPhone 13\",\n                \"description\": \"Latest model with A15 Bionic chip\",\n                \"price\": 999,\n                \"tags\": [\n                    \"smartphone\",\n                    \"apple\"\n                ],\n                \"category\": {\n                    \"_id\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"title\": \"cat1\",\n                    \"description\": \"cat1 description\",\n                    \"createdAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"updatedAt\": \"2025-05-31T19:13:41.631Z\",\n                    \"__v\": 0\n                },\n                \"photos\": [],\n                \"score\": 0.6666666666666666\n            }\n        ],\n        \"totalProductsResults\": 2,\n        \"nextCursor\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete product --protected --admin-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product/683b5c4935c30a51f6a1c1fb",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product",
+								"683b5c4935c30a51f6a1c1fb"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/683b5579b9fa80fe525e6dcd",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"683b5579b9fa80fe525e6dcd"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a8-ZQHO1xuKGvNVOK7xqPAku7sEDjI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 19:35:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get all products of a seller --paginated",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/product/seller/683c04940c3476a6c79b0a57?limit=1&cursor=683c086344f7a3c36fcc92db",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"product",
+								"seller",
+								"683c04940c3476a6c79b0a57"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "cursor",
+									"value": "683c086344f7a3c36fcc92db"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "no products found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/product/seller/683c04940c3476a6c79b0a57",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"product",
+										"seller",
+										"683c04940c3476a6c79b0a57"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-2af0W4jSZv3K29Q8UUud0HP2k/I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 07:58:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"no products for seller: AbdulRahman Sharief\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "Create cart --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"product\" :\"683b60615b37d0bc5aeaf3a3\",\r\n            \"quantity\":20,\r\n            \"priceAtAdd\":800\r\n        },\r\n        {\r\n            \"product\" :\"683b60615b37d0bc5aeaf3a4\",\r\n            \"quantity\":3,\r\n            \"priceAtAdd\":700\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/cart",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"product\" :\"683b60615b37d0bc5aeaf3a3\",\r\n            \"quantity\":20,\r\n            \"priceAtAdd\":800\r\n        },\r\n        {\r\n            \"product\" :\"683b60615b37d0bc5aeaf3a4\",\r\n            \"quantity\":3,\r\n            \"priceAtAdd\":700\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/cart",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"cart"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "513"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"201-dTKj5VvDSbUGi3+zF9d2joYxfyM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 09:11:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Cart created successfully\",\n    \"data\": {\n        \"customer\": \"683c04940c3476a6c79b0a57\",\n        \"items\": [\n            {\n                \"product\": \"683b60615b37d0bc5aeaf3a3\",\n                \"quantity\": 20,\n                \"priceAtAdd\": 800,\n                \"_id\": \"683c194fa4e38fb2a8477f4b\",\n                \"addedAt\": \"2025-06-01T09:11:43.307Z\"\n            },\n            {\n                \"product\": \"683b60615b37d0bc5aeaf3a4\",\n                \"quantity\": 3,\n                \"priceAtAdd\": 700,\n                \"_id\": \"683c194fa4e38fb2a8477f4c\",\n                \"addedAt\": \"2025-06-01T09:11:43.308Z\"\n            }\n        ],\n        \"_id\": \"683c194fa4e38fb2a8477f4a\",\n        \"createdAt\": \"2025-06-01T09:11:43.320Z\",\n        \"updatedAt\": \"2025-06-01T09:11:43.320Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update cart --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"product\" :\"683b60615b37d0bc5aeaf3a3\",\r\n            \"quantity\":30,\r\n            \"priceAtAdd\":400,\r\n            \"action\":\"update\"\r\n        },\r\n        {\r\n            \"product\" :\"683c04440c3476a6c79b0a4a\",\r\n            \"quantity\":2,\r\n            \"priceAtAdd\":1200,\r\n            \"action\":\"add\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/cart/683c194fa4e38fb2a8477f4a",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"cart",
+								"683c194fa4e38fb2a8477f4a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"product\" :\"683b60615b37d0bc5aeaf3a3\",\r\n            \"quantity\":30,\r\n            \"priceAtAdd\":400,\r\n            \"action\":\"update\"\r\n        },\r\n        {\r\n            \"product\" :\"683c04440c3476a6c79b0a4a\",\r\n            \"quantity\":2,\r\n            \"priceAtAdd\":1200,\r\n            \"action\":\"add\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/cart/683c194fa4e38fb2a8477f4a",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"cart",
+										"683c194fa4e38fb2a8477f4a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2087"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"827-y89kBCD0TDaOf7vnt3nNvkc28FU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 09:25:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Cart updated successfully\",\n    \"data\": {\n        \"_id\": \"683c194fa4e38fb2a8477f4a\",\n        \"customer\": {\n            \"_id\": \"683c04940c3476a6c79b0a57\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455526\",\n            \"email\": \"abdulrahman6@gmail.com\",\n            \"password\": \"$2b$12$4FQ3QOk0ez/jAGtxdVE6w.98OFixkdasfqxT/IKvicHlwOjgwcTCO\",\n            \"passwordChangedAt\": \"2025-06-01T07:40:44.501Z\",\n            \"role\": \"Seller\",\n            \"createdAt\": \"2025-06-01T07:43:16.523Z\",\n            \"updatedAt\": \"2025-06-01T07:43:16.523Z\",\n            \"__v\": 0\n        },\n        \"items\": [\n            {\n                \"product\": {\n                    \"stock\": 1,\n                    \"_id\": \"683b60615b37d0bc5aeaf3a3\",\n                    \"name\": \"Apple iPhone 13\",\n                    \"description\": \"Latest model with A15 Bionic chip\",\n                    \"price\": 999,\n                    \"tags\": [\n                        \"smartphone\",\n                        \"apple\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"photos\": []\n                },\n                \"quantity\": 30,\n                \"priceAtAdd\": 400,\n                \"_id\": \"683c194fa4e38fb2a8477f4b\",\n                \"addedAt\": \"2025-06-01T09:11:43.307Z\"\n            },\n            {\n                \"product\": {\n                    \"stock\": 1,\n                    \"_id\": \"683b60615b37d0bc5aeaf3a4\",\n                    \"name\": \"Samsung Galaxy S21\",\n                    \"description\": \"Flagship phone with excellent camera\",\n                    \"price\": 899,\n                    \"tags\": [\n                        \"smartphone\",\n                        \"samsung\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"photos\": []\n                },\n                \"quantity\": 3,\n                \"priceAtAdd\": 700,\n                \"_id\": \"683c194fa4e38fb2a8477f4c\",\n                \"addedAt\": \"2025-06-01T09:11:43.308Z\"\n            },\n            {\n                \"product\": {\n                    \"_id\": \"683c04440c3476a6c79b0a4a\",\n                    \"name\": \"name\",\n                    \"description\": \"desc\",\n                    \"price\": 2002,\n                    \"stock\": 400,\n                    \"photos\": [\n                        {\n                            \"public_id\": \"b5be3880-3414-48cd-9fe0-8bc299e6edd0\",\n                            \"url\": \"C:\\\\Users\\\\Abdul\\\\Desktop\\\\JS-Task\\\\8com-store\\\\8com-store-backend\\\\public\\\\ecommerce\\\\products/b5be3880-3414-48cd-9fe0-8bc299e6edd0.png\",\n                            \"_id\": \"683c04440c3476a6c79b0a4b\"\n                        },\n                        {\n                            \"public_id\": \"30a4b6dc-eb1c-47fc-9306-fba06d669fcc\",\n                            \"url\": \"C:\\\\Users\\\\Abdul\\\\Desktop\\\\JS-Task\\\\8com-store\\\\8com-store-backend\\\\public\\\\ecommerce\\\\products/30a4b6dc-eb1c-47fc-9306-fba06d669fcc.png\",\n                            \"_id\": \"683c04440c3476a6c79b0a4c\"\n                        }\n                    ],\n                    \"tags\": [\n                        \"tag1\",\n                        \"tag2\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"owner\": \"683837dca9f373fead8484f8\",\n                    \"createdAt\": \"2025-06-01T07:41:56.474Z\",\n                    \"updatedAt\": \"2025-06-01T07:43:25.001Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 2,\n                \"priceAtAdd\": 1200,\n                \"addedAt\": \"2025-06-01T09:25:55.884Z\",\n                \"_id\": \"683c1ca36a30436d45a0b70c\"\n            }\n        ],\n        \"createdAt\": \"2025-06-01T09:11:43.320Z\",\n        \"updatedAt\": \"2025-06-01T09:25:55.885Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One Cart by Id --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/cart/683c194fa4e38fb2a8477f4a",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"cart",
+								"683c194fa4e38fb2a8477f4a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/cart/683c194fa4e38fb2a8477f4a",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"cart",
+										"683c194fa4e38fb2a8477f4a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2089"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"829-h/Ngg3aYUSilIuDUitnmA3fcA5Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 09:28:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Cart retrieved successfully\",\n    \"data\": {\n        \"_id\": \"683c194fa4e38fb2a8477f4a\",\n        \"customer\": {\n            \"_id\": \"683c04940c3476a6c79b0a57\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455526\",\n            \"email\": \"abdulrahman6@gmail.com\",\n            \"password\": \"$2b$12$4FQ3QOk0ez/jAGtxdVE6w.98OFixkdasfqxT/IKvicHlwOjgwcTCO\",\n            \"passwordChangedAt\": \"2025-06-01T07:40:44.501Z\",\n            \"role\": \"Seller\",\n            \"createdAt\": \"2025-06-01T07:43:16.523Z\",\n            \"updatedAt\": \"2025-06-01T07:43:16.523Z\",\n            \"__v\": 0\n        },\n        \"items\": [\n            {\n                \"product\": {\n                    \"stock\": 1,\n                    \"_id\": \"683b60615b37d0bc5aeaf3a3\",\n                    \"name\": \"Apple iPhone 13\",\n                    \"description\": \"Latest model with A15 Bionic chip\",\n                    \"price\": 999,\n                    \"tags\": [\n                        \"smartphone\",\n                        \"apple\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"photos\": []\n                },\n                \"quantity\": 30,\n                \"priceAtAdd\": 400,\n                \"_id\": \"683c194fa4e38fb2a8477f4b\",\n                \"addedAt\": \"2025-06-01T09:11:43.307Z\"\n            },\n            {\n                \"product\": {\n                    \"stock\": 1,\n                    \"_id\": \"683b60615b37d0bc5aeaf3a4\",\n                    \"name\": \"Samsung Galaxy S21\",\n                    \"description\": \"Flagship phone with excellent camera\",\n                    \"price\": 899,\n                    \"tags\": [\n                        \"smartphone\",\n                        \"samsung\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"photos\": []\n                },\n                \"quantity\": 3,\n                \"priceAtAdd\": 700,\n                \"_id\": \"683c194fa4e38fb2a8477f4c\",\n                \"addedAt\": \"2025-06-01T09:11:43.308Z\"\n            },\n            {\n                \"product\": {\n                    \"_id\": \"683c04440c3476a6c79b0a4a\",\n                    \"name\": \"name\",\n                    \"description\": \"desc\",\n                    \"price\": 2002,\n                    \"stock\": 400,\n                    \"photos\": [\n                        {\n                            \"public_id\": \"b5be3880-3414-48cd-9fe0-8bc299e6edd0\",\n                            \"url\": \"C:\\\\Users\\\\Abdul\\\\Desktop\\\\JS-Task\\\\8com-store\\\\8com-store-backend\\\\public\\\\ecommerce\\\\products/b5be3880-3414-48cd-9fe0-8bc299e6edd0.png\",\n                            \"_id\": \"683c04440c3476a6c79b0a4b\"\n                        },\n                        {\n                            \"public_id\": \"30a4b6dc-eb1c-47fc-9306-fba06d669fcc\",\n                            \"url\": \"C:\\\\Users\\\\Abdul\\\\Desktop\\\\JS-Task\\\\8com-store\\\\8com-store-backend\\\\public\\\\ecommerce\\\\products/30a4b6dc-eb1c-47fc-9306-fba06d669fcc.png\",\n                            \"_id\": \"683c04440c3476a6c79b0a4c\"\n                        }\n                    ],\n                    \"tags\": [\n                        \"tag1\",\n                        \"tag2\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"owner\": \"683837dca9f373fead8484f8\",\n                    \"createdAt\": \"2025-06-01T07:41:56.474Z\",\n                    \"updatedAt\": \"2025-06-01T07:43:25.001Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 2,\n                \"priceAtAdd\": 1200,\n                \"addedAt\": \"2025-06-01T09:25:55.884Z\",\n                \"_id\": \"683c1ca36a30436d45a0b70c\"\n            }\n        ],\n        \"createdAt\": \"2025-06-01T09:11:43.320Z\",\n        \"updatedAt\": \"2025-06-01T09:25:55.885Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get cart of customer --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/cart/customer",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"cart",
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/cart/customer",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"cart",
+										"customer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2089"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"829-h/Ngg3aYUSilIuDUitnmA3fcA5Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 09:29:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Cart retrieved successfully\",\n    \"data\": {\n        \"_id\": \"683c194fa4e38fb2a8477f4a\",\n        \"customer\": {\n            \"_id\": \"683c04940c3476a6c79b0a57\",\n            \"firstName\": \"AbdulRahman\",\n            \"lastName\": \"Sharief\",\n            \"phone\": \"01045455526\",\n            \"email\": \"abdulrahman6@gmail.com\",\n            \"password\": \"$2b$12$4FQ3QOk0ez/jAGtxdVE6w.98OFixkdasfqxT/IKvicHlwOjgwcTCO\",\n            \"passwordChangedAt\": \"2025-06-01T07:40:44.501Z\",\n            \"role\": \"Seller\",\n            \"createdAt\": \"2025-06-01T07:43:16.523Z\",\n            \"updatedAt\": \"2025-06-01T07:43:16.523Z\",\n            \"__v\": 0\n        },\n        \"items\": [\n            {\n                \"product\": {\n                    \"stock\": 1,\n                    \"_id\": \"683b60615b37d0bc5aeaf3a3\",\n                    \"name\": \"Apple iPhone 13\",\n                    \"description\": \"Latest model with A15 Bionic chip\",\n                    \"price\": 999,\n                    \"tags\": [\n                        \"smartphone\",\n                        \"apple\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"photos\": []\n                },\n                \"quantity\": 30,\n                \"priceAtAdd\": 400,\n                \"_id\": \"683c194fa4e38fb2a8477f4b\",\n                \"addedAt\": \"2025-06-01T09:11:43.307Z\"\n            },\n            {\n                \"product\": {\n                    \"stock\": 1,\n                    \"_id\": \"683b60615b37d0bc5aeaf3a4\",\n                    \"name\": \"Samsung Galaxy S21\",\n                    \"description\": \"Flagship phone with excellent camera\",\n                    \"price\": 899,\n                    \"tags\": [\n                        \"smartphone\",\n                        \"samsung\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"photos\": []\n                },\n                \"quantity\": 3,\n                \"priceAtAdd\": 700,\n                \"_id\": \"683c194fa4e38fb2a8477f4c\",\n                \"addedAt\": \"2025-06-01T09:11:43.308Z\"\n            },\n            {\n                \"product\": {\n                    \"_id\": \"683c04440c3476a6c79b0a4a\",\n                    \"name\": \"name\",\n                    \"description\": \"desc\",\n                    \"price\": 2002,\n                    \"stock\": 400,\n                    \"photos\": [\n                        {\n                            \"public_id\": \"b5be3880-3414-48cd-9fe0-8bc299e6edd0\",\n                            \"url\": \"C:\\\\Users\\\\Abdul\\\\Desktop\\\\JS-Task\\\\8com-store\\\\8com-store-backend\\\\public\\\\ecommerce\\\\products/b5be3880-3414-48cd-9fe0-8bc299e6edd0.png\",\n                            \"_id\": \"683c04440c3476a6c79b0a4b\"\n                        },\n                        {\n                            \"public_id\": \"30a4b6dc-eb1c-47fc-9306-fba06d669fcc\",\n                            \"url\": \"C:\\\\Users\\\\Abdul\\\\Desktop\\\\JS-Task\\\\8com-store\\\\8com-store-backend\\\\public\\\\ecommerce\\\\products/30a4b6dc-eb1c-47fc-9306-fba06d669fcc.png\",\n                            \"_id\": \"683c04440c3476a6c79b0a4c\"\n                        }\n                    ],\n                    \"tags\": [\n                        \"tag1\",\n                        \"tag2\"\n                    ],\n                    \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                    \"owner\": \"683837dca9f373fead8484f8\",\n                    \"createdAt\": \"2025-06-01T07:41:56.474Z\",\n                    \"updatedAt\": \"2025-06-01T07:43:25.001Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 2,\n                \"priceAtAdd\": 1200,\n                \"addedAt\": \"2025-06-01T09:25:55.884Z\",\n                \"_id\": \"683c1ca36a30436d45a0b70c\"\n            }\n        ],\n        \"createdAt\": \"2025-06-01T09:11:43.320Z\",\n        \"updatedAt\": \"2025-06-01T09:25:55.885Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete cart by id --protected",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/cart/683c194fa4e38fb2a8477f4a",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"cart",
+								"683c194fa4e38fb2a8477f4a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/cart/683c194fa4e38fb2a8477f4a",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"cart",
+										"683c194fa4e38fb2a8477f4a"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28d-gchp8C/FwWP4BwS1GfzpnJht0HY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 09:31:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get All Carts --protected --admin-only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}/api/v1/ecommerce/cart",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ecommerce",
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "no carts found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/cart",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"cart"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5a-wAnZnJ6lQN7nG3Jd/rqm6AMRLAc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 09:39:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"message\": \"No carts found. Please ensure carts exist in the database.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_url}}/api/v1/ecommerce/cart",
+									"host": [
+										"{{local_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ecommerce",
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4cb-OBIf4sHfyOXRxKVqpQWIrD/Nc+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 09:41:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Carts retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"683c2037a139fbad5aeb1cce\",\n            \"customer\": {\n                \"_id\": \"683837dca9f373fead8484f8\",\n                \"firstName\": \"AbdulRahman\",\n                \"lastName\": \"Sharief\",\n                \"phone\": \"01045455528\",\n                \"email\": \"abdulrahman@gmail.com\",\n                \"password\": \"$2b$12$.kHxOQedNVc.KU1zjIsjEu3udOBtNL0Fq5xkg8mi9IUuK1mSIGDwq\",\n                \"passwordChangedAt\": \"2025-05-29T10:32:04.883Z\",\n                \"role\": \"Admin\",\n                \"createdAt\": \"2025-05-29T10:33:00.558Z\",\n                \"updatedAt\": \"2025-05-29T10:33:00.558Z\",\n                \"__v\": 0\n            },\n            \"items\": [\n                {\n                    \"product\": {\n                        \"stock\": 1,\n                        \"_id\": \"683b60615b37d0bc5aeaf3a3\",\n                        \"name\": \"Apple iPhone 13\",\n                        \"description\": \"Latest model with A15 Bionic chip\",\n                        \"price\": 999,\n                        \"tags\": [\n                            \"smartphone\",\n                            \"apple\"\n                        ],\n                        \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                        \"photos\": []\n                    },\n                    \"quantity\": 20,\n                    \"priceAtAdd\": 800,\n                    \"_id\": \"683c2037a139fbad5aeb1ccf\",\n                    \"addedAt\": \"2025-06-01T09:41:11.084Z\"\n                },\n                {\n                    \"product\": {\n                        \"stock\": 1,\n                        \"_id\": \"683b60615b37d0bc5aeaf3a4\",\n                        \"name\": \"Samsung Galaxy S21\",\n                        \"description\": \"Flagship phone with excellent camera\",\n                        \"price\": 899,\n                        \"tags\": [\n                            \"smartphone\",\n                            \"samsung\"\n                        ],\n                        \"category\": \"683b54e5b9fa80fe525e6dc2\",\n                        \"photos\": []\n                    },\n                    \"quantity\": 3,\n                    \"priceAtAdd\": 700,\n                    \"_id\": \"683c2037a139fbad5aeb1cd0\",\n                    \"addedAt\": \"2025-06-01T09:41:11.085Z\"\n                }\n            ],\n            \"createdAt\": \"2025-06-01T09:41:11.095Z\",\n            \"updatedAt\": \"2025-06-01T09:41:11.095Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "healthcheck",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/ecommerce/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"ecommerce",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
