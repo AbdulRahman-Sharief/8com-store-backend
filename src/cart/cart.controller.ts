@@ -59,9 +59,10 @@ export class CartController {
     try {
       const allCarts = await this.cartService.findAll();
       if (!allCarts || allCarts.length === 0) {
-        throw new Error(
-          'No carts found. Please ensure carts exist in the database.',
-        );
+        return res.status(HttpStatus.NOT_FOUND).json({
+          status: 'failed',
+          message: 'No carts found. Please ensure carts exist in the database.',
+        });
       }
 
       return res.status(HttpStatus.OK).json({
@@ -177,6 +178,8 @@ export class CartController {
   }
 
   @Delete(':cartId')
+  @UseGuards(RolesGuard)
+  @Roles([USERS_ROLES.ADMIN])
   async remove(@Param('cartId') cartId: string, @Res() res: Response) {
     try {
       if (
