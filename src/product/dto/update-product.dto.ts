@@ -18,6 +18,11 @@ export class UpdateProductDTO {
   price?: number;
 
   @Expose()
+  @IsOptional()
+  @IsString()
+  stock?: number;
+
+  @Expose()
   @IsArray()
   @IsOptional()
   @IsString({ each: true })

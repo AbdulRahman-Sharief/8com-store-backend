@@ -16,6 +16,10 @@ export class CreateProductDTO {
   price: number;
 
   @Expose()
+  @IsString()
+  stock: number;
+
+  @Expose()
   @IsArray()
   @IsOptional()
   @IsString({ each: true })

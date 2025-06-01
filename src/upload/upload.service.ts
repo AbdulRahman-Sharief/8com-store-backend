@@ -96,6 +96,7 @@ export class UploadService {
 
   async deleteMultiplePhotos(photoPaths: string[]) {
     try {
+      console.log('Deleting files:', photoPaths);
       const deletePromises = photoPaths.map((photoPath) =>
         fs.unlink(photoPath),
       );

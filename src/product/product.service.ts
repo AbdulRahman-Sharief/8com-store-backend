@@ -26,8 +26,11 @@ export class ProductService {
     tags,
     category,
     photos,
+    stock = 1, // default stock value
+    owner,
   }: CreateProductDTO & {
     photos?: object[];
+    owner: string;
   }): Promise<ProductEntity> {
     const newProduct = new this.ProductModel({
       name,
@@ -36,6 +39,8 @@ export class ProductService {
       tags,
       photos,
       category,
+      stock,
+      owner,
     });
 
     return await newProduct.save();
@@ -155,7 +160,9 @@ export class ProductService {
   }
 
   async getOneProduct(productId: string): Promise<ProductEntity> {
-    return await this.ProductModel.findById(productId).populate('category');
+    return await this.ProductModel.findById(productId).populate(
+      'category owner',
+    );
   }
 
   // async getAllProductsWithIds(productIds: string[]): Promise<ProductEntity[]> {

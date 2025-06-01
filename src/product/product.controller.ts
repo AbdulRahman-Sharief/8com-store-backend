@@ -41,7 +41,7 @@ export class ProductController {
 
   @Post()
   @UseGuards(RolesGuard)
-  @Roles([USERS_ROLES.ADMIN])
+  @Roles([USERS_ROLES.ADMIN, USERS_ROLES.SELLER])
   @UseInterceptors(
     FilesInterceptor(
       'photos',
@@ -74,10 +74,11 @@ export class ProductController {
       }),
     )
     photos: Express.Multer.File[],
+    @Req() req: Request,
     @Res() res: Response,
   ) {
-    const { name, description, price, tags, category } = body;
-
+    const { name, description, price, tags, category, stock } = body;
+    const owner = req.user.userId;
     //check if the store exist.
     const categoryDB = await this.categoryService.getOneCategoryById(category);
     if (!categoryDB)
@@ -98,6 +99,8 @@ export class ProductController {
       tags,
       photos: photoEntries || [],
       category,
+      stock,
+      owner,
     });
     console.log(newProduct);
     if (newProduct.photos.length >= 0) {
@@ -116,7 +119,7 @@ export class ProductController {
 
   @Patch(':productId')
   @UseGuards(RolesGuard)
-  @Roles([USERS_ROLES.ADMIN])
+  @Roles([USERS_ROLES.ADMIN, USERS_ROLES.SELLER])
   @UseInterceptors(
     FilesInterceptor(
       'photos',
@@ -153,6 +156,8 @@ export class ProductController {
     @Req() req: Request,
     @Res() res: Response,
   ) {
+    const userId = req.user.userId;
+    const user = req.user.user;
     //productId validation
     if (
       !(
@@ -172,7 +177,14 @@ export class ProductController {
         status: 'failed',
         message: 'No Product with such ID.',
       });
-
+    if (user.role === USERS_ROLES.SELLER) {
+      if (user._id.toString() !== product.owner._id.toString()) {
+        return res.status(HttpStatus.FORBIDDEN).json({
+          status: 'failed',
+          message: 'You are not allowed to update this product.',
+        });
+      }
+    }
     const sanitizedBody = sanitizeBody(body);
     console.log(sanitizedBody);
 
